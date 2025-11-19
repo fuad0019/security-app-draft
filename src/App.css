@@ -61,7 +61,7 @@
 .request-card:hover { box-shadow:0 10px 26px rgba(16,24,40,0.12); transform:translateY(-2px); }
 .request-row { display:flex; align-items:center; justify-content:space-between; gap: clamp(12px, 3vw, 28px); }
 .left { flex:1; min-width:0; }
-.addr { font-size: clamp(14px, 2.6vw, 18px); font-weight:700; color:#111827; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.addr { font-size: clamp(14px, 2.6vw, 18px); font-weight:700; color:#111827; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; text-align:left; }
 .right-info { display:flex; align-items:center; gap:10px; flex-shrink:0; }
 .chip { border-radius:999px; padding: clamp(4px, 1vw, 8px) clamp(10px, 2vw, 18px); font-size: clamp(11px, 2vw, 13px); font-weight:700; letter-spacing:.5px; color:#fff; }
 .chip-high { background:var(--danger); }
