@@ -97,6 +97,20 @@
 .alarm-pressed p:last-child { font-size:28px; font-weight:800; margin-top:8px; }
 @keyframes fadeInUp { from { opacity:0; transform:translateY(8px);} to { opacity:1; transform:translateY(0);} }
 
+/* --- Shared Header --- */
+.app-header { position:sticky; top:0; z-index:50; width:100%; backdrop-filter:blur(12px); background:rgba(255,255,255,0.8); border-bottom:1px solid var(--border-color); }
+@media (prefers-color-scheme: dark) { .app-header { background:rgba(15,23,42,0.72); } }
+.app-header-inner { max-width:1280px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; justify-content:space-between; }
+.app-brand { font-weight:700; font-size:18px; letter-spacing:.5px; color:#1e293b; }
+@media (prefers-color-scheme: dark) { .app-brand { color:#f1f5f9; } }
+.app-header-right { display:flex; align-items:center; gap:14px; }
+.role-badge { padding:6px 12px; border-radius:20px; font-size:13px; font-weight:600; background:#e2e8f0; color:#1e293b; box-shadow:0 0 0 1px #cbd5e1 inset; }
+@media (prefers-color-scheme: dark) { .role-badge { background:#1e293b; color:#f1f5f9; box-shadow:0 0 0 1px #334155 inset; } }
+.logout-btn { background:#ef4444; color:#fff; font-weight:600; font-size:13px; padding:8px 16px; border:none; border-radius:10px; cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,0.15); transition:background .15s, transform .15s; }
+.logout-btn:hover { background:#dc2626; }
+.logout-btn:active { transform:translateY(1px); }
+@media (max-width:640px) { .role-badge { display:none; } }
+
 /* --- Emergency Page --- */
 .emergency-page { min-height:100vh; background:var(--page-bg); padding:56px 20px 60px; display:flex; flex-direction:column; align-items:center; }
 .emergency-map { width:100%; max-width:520px; height:380px; border-radius:20px; overflow:hidden; box-shadow:0 6px 20px rgba(16,24,40,0.10); border:1px solid var(--border-color); }

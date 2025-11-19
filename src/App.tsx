@@ -5,12 +5,15 @@ import EmergencyConfirmationUI from './pages/ClientEmergency'
 import AlarmUI from './pages/ClientAlarm'
 import Login from './pages/Login'
 import ProtectedRoute from './routes/ProtectedRoute'
+import Header from './components/Header'
 
 function App() {
   const location = useLocation()
 
   return (
-    <Routes location={location}>
+    <>
+      <Header />
+      <Routes location={location}>
       <Route path="/login" element={<Login />} />
 
       <Route
@@ -50,6 +53,7 @@ function App() {
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </>
   )
 }
 
