@@ -56,8 +56,8 @@
 .guard-page { min-height:100vh; width:100%; background:var(--page-bg); display:flex; flex-direction:column; align-items:center; }
 .guard-inner { width:80%; max-width:1200px; padding:0 clamp(12px,4vw,32px); box-sizing:border-box; }
 .guard-header { font-size: clamp(22px, 4vw, 36px); font-weight:800; color:#141a22; margin: clamp(12px, 3vw, 28px) 0; }
-.request-list { width:100%; max-width: clamp(320px, 92vw, 860px); margin:0 auto; display:flex; flex-direction:column; gap: clamp(12px, 3vw, 20px); }
-.request-card { width:100%; background:var(--card-bg); border-radius: clamp(12px, 2vw, 20px); box-shadow:0 8px 20px rgba(16,24,40,0.06); padding: clamp(12px,3vw,24px) clamp(12px,4vw,28px); display:flex; flex-direction:column; transition:box-shadow .25s ease, transform .25s ease; }
+.request-list { width:100%; max-width: clamp(320px, 92vw, 860px); margin:0 auto; display:flex; flex-direction:column; gap: clamp(12px, 3vw, 20px); box-sizing:border-box; overflow-x:hidden; }
+.request-card { width:100%; max-width:100%; box-sizing:border-box; background:var(--card-bg); border-radius: clamp(12px, 2vw, 20px); box-shadow:0 8px 20px rgba(16,24,40,0.06); padding: clamp(12px,3vw,24px) clamp(12px,4vw,28px); display:flex; flex-direction:column; transition:box-shadow .25s ease, transform .25s ease; }
 .request-card:hover { box-shadow:0 10px 26px rgba(16,24,40,0.12); transform:translateY(-2px); }
 .request-row { display:flex; align-items:center; justify-content:space-between; gap: clamp(12px, 3vw, 28px); }
 .addr { font-size: clamp(14px, 2.6vw, 18px); font-weight:700; color:#111827; }
