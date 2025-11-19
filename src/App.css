@@ -60,8 +60,9 @@
 .request-card { width:100%; max-width:100%; box-sizing:border-box; background:var(--card-bg); border-radius: clamp(12px, 2vw, 20px); box-shadow:0 8px 20px rgba(16,24,40,0.06); padding: clamp(12px,3vw,24px) clamp(12px,4vw,28px); display:flex; flex-direction:column; transition:box-shadow .25s ease, transform .25s ease; }
 .request-card:hover { box-shadow:0 10px 26px rgba(16,24,40,0.12); transform:translateY(-2px); }
 .request-row { display:flex; align-items:center; justify-content:space-between; gap: clamp(12px, 3vw, 28px); }
-.addr { font-size: clamp(14px, 2.6vw, 18px); font-weight:700; color:#111827; }
-.right-info { display:flex; align-items:center; gap:10px; }
+.left { flex:1; min-width:0; }
+.addr { font-size: clamp(14px, 2.6vw, 18px); font-weight:700; color:#111827; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.right-info { display:flex; align-items:center; gap:10px; flex-shrink:0; }
 .chip { border-radius:999px; padding: clamp(4px, 1vw, 8px) clamp(10px, 2vw, 18px); font-size: clamp(11px, 2vw, 13px); font-weight:700; letter-spacing:.5px; color:#fff; }
 .chip-high { background:var(--danger); }
 .chip-medium { background:var(--warn); }
@@ -74,8 +75,11 @@
   .guard-inner { padding:0 16px; }
   .guard-header { font-size:26px; margin-bottom:20px; }
   .request-card { padding:16px 20px; border-radius:16px; }
-  .addr { font-size:16px; }
+  .addr { font-size:14px; }
   .request-row { gap:16px; }
+}
+@media (max-width:420px) {
+  .addr { font-size:13px; }
 }
 @media (min-width:1400px) {
   .guard-inner { max-width:1200px; }
