@@ -16,40 +16,63 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-      <div className="w-full max-w-sm bg-white rounded-2xl shadow p-6">
-        <h1 className="text-2xl font-bold mb-4">Sign In</h1>
-        <form className="flex flex-col gap-4" onSubmit={onSubmit}>
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium">Username (optional)</label>
-            <input
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="border rounded-lg px-3 py-2"
-              placeholder="Enter your name"
-            />
+    <div className="login-page">
+      <div className="login-grid">
+        <div className="login-brand-pane">
+          <div className="login-brand-content">
+            <h1 className="login-brand-title">SecurityApp</h1>
+            <p className="login-brand-sub">Unified emergency response coordination platform.</p>
+            <ul className="login-points">
+              <li>Real-time guard dispatch</li>
+              <li>Client emergency signaling</li>
+              <li>Secure role-based access</li>
+            </ul>
           </div>
-          <div className="flex flex-col gap-1">
-            <label className="text-sm font-medium">Role</label>
-            <select
-              value={role}
-              onChange={(e) => setRole(e.target.value as 'client' | 'guard' | '')}
-              className="border rounded-lg px-3 py-2"
-              required
-            >
-              <option value="">Select role</option>
-              <option value="client">Client</option>
-              <option value="guard">Security Guard</option>
-            </select>
-          </div>
-          <button
-            type="submit"
-            className="bg-blue-600 text-white py-2 rounded-lg font-semibold"
-            disabled={!role}
-          >
-            Continue
-          </button>
-        </form>
+        </div>
+        <div className="login-card" role="form" aria-labelledby="login-heading">
+          <h2 id="login-heading" className="login-title">Sign In</h2>
+          <p className="login-sub">Select your role to continue.</p>
+          <form onSubmit={onSubmit}>
+            <div className="form-group">
+              <label className="form-label" htmlFor="username">Username (optional)</label>
+              <input
+                id="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="text-input"
+                placeholder="Jane Doe"
+                autoComplete="username"
+              />
+            </div>
+            <fieldset className="form-group" aria-required="true">
+              <legend className="form-label">Role</legend>
+              <div className="role-options">
+                <label className={`role-option ${role==='client'?'selected':''}`}> 
+                  <input
+                    type="radio"
+                    name="role"
+                    value="client"
+                    checked={role==='client'}
+                    onChange={() => setRole('client')}
+                  />
+                  <span>Client</span>
+                </label>
+                <label className={`role-option ${role==='guard'?'selected':''}`}> 
+                  <input
+                    type="radio"
+                    name="role"
+                    value="guard"
+                    checked={role==='guard'}
+                    onChange={() => setRole('guard')}
+                  />
+                  <span>Security Guard</span>
+                </label>
+              </div>
+            </fieldset>
+            <button type="submit" className="login-btn" disabled={!role}>Continue</button>
+          </form>
+          <p className="login-foot-note">By continuing you agree to responsible system usage.</p>
+        </div>
       </div>
     </div>
   )
